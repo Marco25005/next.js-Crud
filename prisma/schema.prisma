@@ -15,7 +15,7 @@ datasource db {
 
 model Catedra {
   id_catedra            Int      @id @default(autoincrement())
-  Nombre_catedra        String
+  nombre_catedra        String
   adscrita_a            String
   fecha_fundada         Int
   cantidad_profesores   Int
