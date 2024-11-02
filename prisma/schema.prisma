@@ -17,20 +17,20 @@ model Catedra {
   id_catedra            Int      @id @default(autoincrement())
   nombre_catedra        String
   adscrita_a            String
-  fecha_fundada         Int
-  cantidad_profesores   Int
-  cantidad_estudiantes  Int
+  fecha_fundada         String
+  cantidad_profesores   String
+  cantidad_estudiantes  String
 
   Profesores            Profesor[]
   Actividades           Actividades[]
 }
 model Actividades{
   id_actividad          Int     @id @default(autoincrement())
-  investigacionesApro Int
-  eventos Int
-  proyectos Int
-  publicaciones Int
-  articulos  Int
+  investigacionesApro String
+  eventos String
+  proyectos String
+  publicaciones String
+  articulos  String
   catedra_id Int
   catedra Catedra @relation(fields: [catedra_id], references: [id_catedra])
 }
@@ -39,7 +39,7 @@ model Profesor {
   id_profesor   Int     @id @default(autoincrement())
   nombre        String
   e_mail        String
-  telefono      Int
+  telefono      String
   catedra_id    Int
   Presidente    Presidente?
   Titulos       Titulos[]
@@ -54,9 +54,9 @@ model Presidente{
 
 model Titulos{
   id_titulos Int @id
-  tesis_diploma Boolean
-  tesis_maestria  Boolean
-  tesis_doctorado Boolean
+  tesis_diploma String
+  tesis_maestria  String
+  tesis_doctorado String
   profesor_id_t Int 
   Profesor      Profesor @relation(fields: [profesor_id_t], references: [id_profesor])
 }
